@@ -1,0 +1,1258 @@
+@import url("https://fonts.googleapis.com/css2?family=Russo+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Petit+Formal+Script&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #f5f1ed;
+}
+
+@layer utilities {
+  .pushable {
+    background: hsl(208deg 100% 32%);
+    border-radius: 25px;
+    border: none;
+    position: relative;
+    color: #fff;
+    text-transform: uppercase;
+    font-family: "Inter";
+    padding: 0px;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.12);
+    cursor: pointer;
+    outline-offset: 2px;
+  }
+  .front {
+    display: block;
+    padding: 18px 20px;
+    border-radius: 25px;
+    font-size: 1.15rem;
+    background: #4169e1;
+    color: white;
+    font-family: "Inter";
+    transform: translateY(-6px);
+  }
+  .front2 {
+    display: block;
+    padding: 18px 20px;
+    border-radius: 25px;
+    font-size: 1.15rem;
+    background: hsl(202 99% 38%);
+    color: white;
+    font-family: "Inter";
+    transform: translateY(-6px);
+  }
+  .pushable:active .front {
+    transform: translateY(-2px);
+  }
+  .transform {
+    transform: translateY(-200px);
+  }
+
+  .header {
+    animation: bounce 4s linear infinite;
+  }
+  @keyframes bounce {
+    0% {
+      transform: translateY(-20px);
+    }
+    50% {
+      transform: translateY(20px);
+    }
+    100% {
+      transform: translateY(-20px);
+    }
+  }
+  @media (max-width: 639px) {
+    .front {
+      display: block;
+      padding: 14px 12px;
+      border-radius: 25px;
+      font-size: 1.15rem;
+      background: #4169e1;
+      color: white;
+      font-family: "Inter";
+      transform: translateY(-6px);
+    }
+  }
+}
+
+/* tambahan */
+
+@keyframes blow3 {
+  0% {
+    transform: translateX(0) rotate(0deg) scale(1);
+  }
+  25% {
+    transform: translateX(-5px) rotate(-2deg) scale(1);
+  }
+  50% {
+    transform: translateX(5px) rotate(2deg) scale(1);
+  }
+  75% {
+    transform: translateX(-5px) rotate(-2deg) scale(1);
+  }
+  100% {
+    transform: translateX(0) rotate(0deg) scale(1);
+  }
+}
+
+.animate-blow3 {
+  animation: blow3 6s ease-in-out infinite; /* Durasi animasi lebih lama dan lebih halus */
+}
+
+/* Animasi gerakan vertikal naik dan turun */
+@keyframes lift {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-5px) scale(1.05);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Animasi putaran atau rotasi */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes grow {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes sway {
+  0% {
+    transform: translateX(0) rotate(0deg);
+  }
+  25% {
+    transform: translateX(-5px) rotate(-5deg);
+  }
+  50% {
+    transform: translateX(5px) rotate(5deg);
+  }
+  75% {
+    transform: translateX(-5px) rotate(-5deg);
+  }
+  100% {
+    transform: translateX(0) rotate(0deg);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes gentleShake {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-3px);
+  }
+  50% {
+    transform: translateX(3px);
+  }
+  75% {
+    transform: translateX(-3px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes spring {
+  0% {
+    transform: scale(0.8) translateY(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.1) translateY(-10px);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Animasi floatUp (muncul dari bawah dan membesar perlahan) */
+@keyframes floatUp {
+  0% {
+    transform: translateY(100px) scale(0.2); /* Mulai dari bawah dengan ukuran sangat kecil */
+    opacity: 0; /* Mulai dengan transparansi 0 */
+  }
+
+  50% {
+    transform: translateY(50px) scale(0.7); /* Mendekati posisi normal */
+    opacity: 0.5;
+  }
+
+  100% {
+    transform: translateY(0) scale(1); /* Posisi akhir dan ukuran penuh */
+    opacity: 1; /* Sepenuhnya terlihat */
+  }
+}
+
+@keyframes floatUp8 {
+  0% {
+    transform: translateY(100px) scaleX(-1) scale(0.2); /* Mulai dari bawah dengan ukuran sangat kecil */
+    opacity: 0; /* Mulai dengan transparansi 0 */
+  }
+
+  50% {
+    transform: translateY(30px) scaleX(-1) scale(0.7); /* Mendekati posisi normal */
+    opacity: 0.5;
+  }
+
+  100% {
+    transform: translateY(0) scaleX(-1) scale(1); /* Posisi akhir dan ukuran penuh */
+    opacity: 1; /* Sepenuhnya terlihat */
+  }
+}
+/* Animasi floatUp (muncul dari bawah dan membesar perlahan) */
+@keyframes floatUp2 {
+  0% {
+    transform: translateY(-100px) scale(0.2); /* Mulai dari atas dengan ukuran sangat kecil */
+    opacity: 0; /* Mulai dengan transparansi 0 */
+  }
+  50% {
+    transform: translateY(-50px) scale(0.2); /* Mulai dari atas dengan ukuran sangat kecil */
+    opacity: 0; /* Mulai dengan transparansi 0 */
+  }
+
+  100% {
+    transform: translateY(0) scale(1); /* Posisi akhir dan ukuran penuh */
+    opacity: 1; /* Sepenuhnya terlihat */
+  }
+}
+/* Animasi floatUp (muncul dari bawah dan membesar perlahan) */
+@keyframes floatUp3 {
+  0% {
+    transform: translateY(100px) scale(0.2); /* Mulai dari bawah dengan ukuran sangat kecil */
+    opacity: 0; /* Mulai dengan transparansi 0 */
+  }
+
+  50% {
+    transform: translateY(50px) scale(0.7); /* Mendekati posisi normal */
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0) scale(1); /* Posisi akhir dan ukuran penuh */
+    opacity: 1; /* Sepenuhnya terlihat */
+  }
+}
+
+@keyframes floatUp4 {
+  0% {
+    transform: translateX(100px) rotate(40deg) scale(0.2); /* Mulai dari bawah dengan ukuran sangat kecil */
+    opacity: 0; /* Mulai dengan transparansi 0 */
+  }
+
+  50% {
+    transform: translateX(50px) rotate(40deg) scale(0.7); /* Mendekati posisi normal */
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0) rotate(40deg) scale(1); /* Posisi akhir dan ukuran penuh */
+    opacity: 1; /* Sepenuhnya terlihat */
+  }
+}
+
+@keyframes floatUp5 {
+  0% {
+    transform: translateX(100px) rotate(20deg) scale(0.2); /* Mulai dari bawah dengan ukuran sangat kecil */
+    opacity: 0; /* Mulai dengan transparansi 0 */
+  }
+
+  50% {
+    transform: translateX(50px) rotate(20deg) scale(0.7); /* Mendekati posisi normal */
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0) rotate(20deg) scale(1); /* Posisi akhir dan ukuran penuh */
+    opacity: 1; /* Sepenuhnya terlihat */
+  }
+}
+
+@keyframes floatUp6 {
+  0% {
+    transform: translateX(-100px) rotate(20deg) scale(0.2); /* Mulai dari bawah dengan ukuran sangat kecil */
+    opacity: 0; /* Mulai dengan transparansi 0 */
+  }
+
+  50% {
+    transform: translateX(-50px) rotate(20deg) scale(0.7); /* Mendekati posisi normal */
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0) rotate(20deg) scale(1); /* Posisi akhir dan ukuran penuh */
+    opacity: 1; /* Sepenuhnya terlihat */
+  }
+}
+
+@keyframes floatUp7 {
+  0% {
+    transform: translateX(-100px) rotate(-40deg) scale(0.2); /* Mulai dari bawah dengan ukuran sangat kecil */
+    opacity: 0; /* Mulai dengan transparansi 0 */
+  }
+
+  50% {
+    transform: translateX(-50px) rotate(-40deg) scale(0.7); /* Mendekati posisi normal */
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0) rotate(-40deg) scale(1); /* Posisi akhir dan ukuran penuh */
+    opacity: 1; /* Sepenuhnya terlihat */
+  }
+}
+
+/* Animasi bergoyang yang lebih halus */
+/* @keyframes blow0deg {
+  0% {
+    transform: translateX(0) rotate(0deg) scale(1);
+  }
+  25% {
+    transform: translateX(-5px) rotate(-2deg) scale(1);
+  }
+  50% {
+    transform: translateX(5px) rotate(2deg) scale(1);
+  }
+  75% {
+    transform: translateX(-5px) rotate(-2deg) scale(1);
+  }
+  100% {
+    transform: translateX(0) rotate(0deg) scale(1);
+  }
+}
+@keyframes blow81 {
+  0% {
+    transform: translateX(0) scaleX(-1) rotate(0deg) scale(1);
+  }
+  25% {
+    transform: translateX(-5px) scaleX(-1) rotate(-2deg) scale(1);
+  }
+  50% {
+    transform: translateX(5px) scaleX(-1) rotate(2deg) scale(1);
+  }
+  75% {
+    transform: translateX(-5px) scaleX(-1) rotate(-2deg) scale(1);
+  }
+  100% {
+    transform: translateX(0) scaleX(-1) rotate(0deg) scale(1);
+  }
+} */
+
+@keyframes blow0deg {
+  0% {
+    transform: translateX(0) rotate(0deg) scale(1);
+  }
+  25% {
+    transform: translateX(-5px) rotate(-2deg) scale(1);
+  }
+  50% {
+    transform: translateX(5px) rotate(2deg) scale(1);
+  }
+  75% {
+    transform: translateX(-5px) rotate(-2deg) scale(1);
+  }
+  100% {
+    transform: translateX(0) rotate(0deg) scale(1);
+  }
+}
+
+@keyframes blow81 {
+  0% {
+    transform: translateX(0) rotate(0deg) scale(1) scaleX(-1);
+  }
+  25% {
+    transform: translateX(-5px) rotate(-2deg) scale(1) scaleX(-1);
+  }
+  50% {
+    transform: translateX(5px) rotate(2deg) scale(1) scaleX(-1);
+  }
+  75% {
+    transform: translateX(-5px) rotate(-2deg) scale(1) scaleX(-1);
+  }
+  100% {
+    transform: translateX(0) rotate(0deg) scale(1) scaleX(-1);
+  }
+}
+
+/* Animasi bergoyang yang lebih halus */
+@keyframes blow2 {
+  0% {
+    transform: translateX(0) rotate(40deg) scale(1);
+  }
+  25% {
+    transform: translateX(-5px) rotate(38deg) scale(1);
+  }
+  50% {
+    transform: translateX(5px) rotate(42deg) scale(1);
+  }
+  75% {
+    transform: translateX(-5px) rotate(38deg) scale(1);
+  }
+  100% {
+    transform: translateX(0) rotate(40deg) scale(1);
+  }
+}
+
+@keyframes blow4 {
+  100% {
+    transform: translateY(0px) rotate(0deg) scale(1);
+  }
+  75% {
+    transform: translateY(-5px) rotate(-2deg) scale(1);
+  }
+  50% {
+    transform: translateY(5px) rotate(2deg) scale(1);
+  }
+  25% {
+    transform: translateY(-5px) rotate(-2deg) scale(1);
+  }
+  0% {
+    transform: translateY(0) rotate(0deg) scale(1);
+  }
+}
+
+@keyframes blow5 {
+  100% {
+    transform: translateX(0px) rotate(20deg) scale(1);
+  }
+  75% {
+    transform: translateX(-5px) rotate(18deg) scale(1);
+  }
+  50% {
+    transform: translateX(5px) rotate(20deg) scale(1);
+  }
+  25% {
+    transform: translateX(-5px) rotate(22deg) scale(1);
+  }
+  0% {
+    transform: translateX(0) rotate(20deg) scale(1);
+  }
+}
+
+@keyframes blow6 {
+  100% {
+    transform: translateX(0px) rotate(20deg) scale(1);
+  }
+  75% {
+    transform: translateX(-5px) rotate(18deg) scale(1);
+  }
+  50% {
+    transform: translateX(5px) rotate(20deg) scale(1);
+  }
+  25% {
+    transform: translateX(-5px) rotate(22deg) scale(1);
+  }
+  0% {
+    transform: translateX(0) rotate(20deg) scale(1);
+  }
+}
+@keyframes blow7 {
+  0% {
+    transform: translateX(0) rotate(-40deg) scale(1);
+  }
+  25% {
+    transform: translateX(-5px) rotate(-38deg) scale(1);
+  }
+  50% {
+    transform: translateX(5px) rotate(-42deg) scale(1);
+  }
+  75% {
+    transform: translateX(-5px) rotate(-38deg) scale(1);
+  }
+  100% {
+    transform: translateX(0) rotate(-40deg) scale(1);
+  }
+}
+
+@keyframes blow {
+  100% {
+    transform: translateX(0px) rotate(20deg) scale(1);
+  }
+  75% {
+    transform: translateX(-5px) rotate(18deg) scale(1);
+  }
+  50% {
+    transform: translateX(5px) rotate(20deg) scale(1);
+  }
+  25% {
+    transform: translateX(-5px) rotate(22deg) scale(1);
+  }
+  0% {
+    transform: translateX(0) rotate(20deg) scale(1);
+  }
+}
+
+@keyframes blow8 {
+  100% {
+    transform: translateX(0px) rotate(20deg) scale(1);
+  }
+  75% {
+    transform: translateX(-5px) rotate(18deg) scale(1);
+  }
+  50% {
+    transform: translateX(5px) rotate(20deg) scale(1);
+  }
+  25% {
+    transform: translateX(-5px) rotate(22deg) scale(1);
+  }
+  0% {
+    transform: translateX(0) rotate(20deg) scale(1);
+  }
+}
+
+/* Kelas animasi untuk elemen yang pertama kali mengaplikasikan floatUp dan kemudian blow */
+.animate-sequence {
+  animation: floatUp 3s ease-out, blow0deg 4s ease-in-out 3s infinite;
+  /* floatUp durasi 3 detik, blow dimulai setelah 3 detik selesai */
+}
+.animate-sequenceInit {
+  animation: ping 2s ease-out, floatUp 2s ease-out 1s, blow0deg 4s ease-in-out 3s infinite;
+  /* floatUp durasi 3 detik, blow dimulai setelah 3 detik selesai */
+}
+.animate-sequence8 {
+  animation: ping 2s ease-out, floatUp8 2s ease-out 1s, blow81 4s ease-in-out 3s infinite;
+  /* floatUp durasi 3 detik, blow dimulai setelah 3 detik selesai */
+}
+
+.animate-sequence2 {
+  animation: floatUp2 5s ease-out, blow4 5s ease-in-out 5s infinite;
+  /* floatUp durasi 3 detik, blow dimulai setelah 3 detik selesai */
+}
+.animate-sequence3 {
+  animation: floatUp3 5s ease-out, blow4 5s ease-in-out 5s infinite;
+  /* floatUp durasi 3 detik, blow dimulai setelah 3 detik selesai */
+}
+
+.animate-sequence4 {
+  animation: ping 2s ease-out, floatUp4 3s ease-out 2s, blow2 5s ease-in-out 5s infinite;
+  /* floatUp durasi 3 detik, blow dimulai setelah 3 detik selesai */
+}
+.animate-sequence7 {
+  animation: floatUp7 5s ease-out, blow7 5s ease-in-out 5s infinite;
+  /* floatUp durasi 3 detik, blow dimulai setelah 3 detik selesai */
+}
+
+.animate-sequence5 {
+  animation: ping 2s ease-out, floatUp5 2s ease-out 2s, blow5 2s ease-in-out 4s infinite;
+  /* floatUp durasi 3 detik, blow dimulai setelah 3 detik selesai */
+}
+.animate-sequence6 {
+  animation: floatUp6 5s ease-out, blow6 5s ease-in-out 5s infinite;
+  /* floatUp durasi 3 detik, blow dimulai setelah 3 detik selesai */
+}
+
+/* Animasi floatUp (muncul dari bawah dan membesar perlahan) */
+@keyframes floatRight {
+  0% {
+    transform: translateX(100px) scale(0.2); /* Mulai dari bawah dengan ukuran sangat kecil */
+    opacity: 0; /* Mulai dengan transparansi 0 */
+  }
+
+  50% {
+    transform: translateX(50px) scale(0.7); /* Mendekati posisi normal */
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0) scale(1); /* Posisi akhir dan ukuran penuh */
+    opacity: 1; /* Sepenuhnya terlihat */
+  }
+}
+@keyframes floatRight3 {
+  0% {
+    transform: translateX(100px) scaleX(-1) scale(0.2); /* Mulai dari bawah dengan ukuran sangat kecil */
+    opacity: 0; /* Mulai dengan transparansi 0 */
+  }
+
+  50% {
+    transform: translateX(50px) scaleX(-1) scale(0.7); /* Mendekati posisi normal */
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0) scaleX(-1) scale(1); /* Posisi akhir dan ukuran penuh */
+    opacity: 1; /* Sepenuhnya terlihat */
+  }
+}
+
+@keyframes floatRight1 {
+  0% {
+    transform: translateX(100px) rotate(-18deg) scale(0.2); /* Mulai dari bawah dengan ukuran sangat kecil */
+    opacity: 0; /* Mulai dengan transparansi 0 */
+  }
+
+  50% {
+    transform: translateX(50px) rotate(-18deg) scale(0.7); /* Mendekati posisi normal */
+    opacity: 0.5;
+  }
+
+  100% {
+    transform: translateX(0) rotate(-18deg) scale(1); /* Posisi akhir dan ukuran penuh */
+    opacity: 1; /* Sepenuhnya terlihat */
+  }
+}
+
+@keyframes floatRightOurHistory {
+  0% {
+    transform: translateX(100px) scale(0.2); /* Mulai dari bawah dengan ukuran sangat kecil */
+    opacity: 0; /* Mulai dengan transparansi 0 */
+  }
+
+  50% {
+    transform: translateX(50px) scale(0.7); /* Mendekati posisi normal */
+    opacity: 0.5;
+  }
+
+  100% {
+    transform: translateX(0) scale(1); /* Posisi akhir dan ukuran penuh */
+    opacity: 1; /* Sepenuhnya terlihat */
+  }
+}
+
+@keyframes floatRight2 {
+  0% {
+    transform: translateX(100px) scale(0.2); /* Mulai dari bawah dengan ukuran sangat kecil */
+    opacity: 0; /* Mulai dengan transparansi 0 */
+  }
+
+  50% {
+    transform: translateX(50px) scale(0.7); /* Mendekati posisi normal */
+    opacity: 0.5;
+  }
+
+  100% {
+    transform: translateX(0) scale(1); /* Posisi akhir dan ukuran penuh */
+    opacity: 1; /* Sepenuhnya terlihat */
+  }
+}
+@keyframes floatLeft {
+  0% {
+    transform: translateX(-100px) scale(0.2); /* Mulai dari bawah dengan ukuran sangat kecil */
+    opacity: 0; /* Mulai dengan transparansi 0 */
+  }
+
+  50% {
+    transform: translateX(-50px) scale(0.7); /* Mendekati posisi normal */
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0) scale(1); /* Posisi akhir dan ukuran penuh */
+    opacity: 1; /* Sepenuhnya terlihat */
+  }
+}
+@keyframes floatLeft1 {
+  0% {
+    transform: translateX(-100px) scale(0.2); /* Mulai dari bawah dengan ukuran sangat kecil */
+    opacity: 0; /* Mulai dengan transparansi 0 */
+  }
+
+  50% {
+    transform: translateX(-50px) scale(0.7); /* Mendekati posisi normal */
+    opacity: 0.5;
+  }
+
+  100% {
+    transform: translateX(0) scale(1); /* Posisi akhir dan ukuran penuh */
+    opacity: 1; /* Sepenuhnya terlihat */
+  }
+}
+@keyframes floatLeft2 {
+  0% {
+    transform: translateX(-100px) scaleX(-1) scale(0.2); /* Mulai dari bawah dengan ukuran sangat kecil */
+    opacity: 0; /* Mulai dengan transparansi 0 */
+  }
+
+  50% {
+    transform: translateX(-50px) scaleX(-1) scale(0.7); /* Mendekati posisi normal */
+    opacity: 0.5;
+  }
+
+  100% {
+    transform: translateX(0) scaleX(-1) scale(1); /* Posisi akhir dan ukuran penuh */
+    opacity: 1; /* Sepenuhnya terlihat */
+  }
+}
+
+@keyframes floatLeftOurHistory {
+  0% {
+    transform: translateX(-100px) scaleX(-1) scale(0.2); /* Mulai dari bawah dengan ukuran sangat kecil */
+    opacity: 0; /* Mulai dengan transparansi 0 */
+  }
+
+  50% {
+    transform: translateX(-50px) scaleX(-1) scale(0.7); /* Mendekati posisi normal */
+    opacity: 0.5;
+  }
+
+  100% {
+    transform: translateX(0) scaleX(-1) scale(1); /* Posisi akhir dan ukuran penuh */
+    opacity: 1; /* Sepenuhnya terlihat */
+  }
+}
+@keyframes floatLeft3 {
+  0% {
+    transform: translateX(-100px) scaleX(-1) scale(0.2); /* Mulai dari bawah dengan ukuran sangat kecil */
+    opacity: 0; /* Mulai dengan transparansi 0 */
+  }
+
+  50% {
+    transform: translateX(-50px) scaleX(-1) scale(0.7); /* Mendekati posisi normal */
+    opacity: 0.5;
+  }
+
+  100% {
+    transform: translateX(0) scaleX(-1) scale(1); /* Posisi akhir dan ukuran penuh */
+    opacity: 1; /* Sepenuhnya terlihat */
+  }
+}
+
+.animate-floatRight {
+  animation: floatRight 5s ease-out;
+}
+.animate-floatRight1 {
+  animation: floatRight1 5s ease-out;
+}
+.animate-floatRightOurHistory {
+  animation: ping 2s ease-out, floatRightOurHistory 3s ease-out 2s;
+}
+/* untuk animasi scalex-1 */
+.animate-floatRight3 {
+  animation: floatRight3 5s ease-out;
+}
+.animate-floatLeft {
+  animation: floatLeft 5s ease-out;
+}
+.animate-floatLeft1 {
+  animation: ping 2s ease-out, floatLeft1 3s ease-out 2s;
+}
+.animate-floatLeft2 {
+  animation: ping 2s ease-out, floatLeft2 3s ease-out 2s;
+}
+.animate-floatLeftOurHistory {
+  animation: ping 2s ease-out, floatLeftOurHistory 3s ease-out 2s;
+}
+.animate-floatRightBlow {
+  animation: floatRight 5s ease-out, blow 5s ease-in-out 5s infinite;
+}
+.animate-floatLeftBlow {
+  animation: floatLeft 5s ease-out, blow 5s ease-in-out 5s infinite;
+}
+
+@keyframes growUp {
+  0% {
+    transform: translateY(20px) scale(0.9);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideUpSection {
+  0% {
+    transform: translateY(100vh); /* Mulai di bawah viewport */
+    /* opacity: 0; Tidak terlihat pada awal animasi */
+  }
+  100% {
+    transform: translateY(0); /* Pindah ke posisi semula */
+    /* opacity: 1; Menjadi sepenuhnya terlihat */
+  }
+}
+
+@keyframes ping {
+  0% {
+    transform: scale(0) scaleX(-1);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1) scaleX(-1);
+    opacity: 0;
+  }
+}
+@keyframes ping1 {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes ping2 {
+  0% {
+    transform: scaleY(-1) scale(0);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scaleY(-1) scale(1);
+    opacity: 1;
+  }
+}
+@keyframes ping3 {
+  0% {
+    transform: scaleY(1) scale(0);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scaleY(1) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes ping4 {
+  0% {
+    transform: scale(0) scaleX(-1);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1) scaleX(-1);
+    opacity: 1;
+  }
+}
+
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
+}
+
+/* Animasi akar menjalar */
+@keyframes growRoots {
+  0% {
+    transform: scale(0); /* Mulai dari ukuran sangat kecil */
+    opacity: 0; /* Mulai tidak terlihat */
+  }
+  100% {
+    transform: scale(1); /* Kembali ke ukuran normal */
+    opacity: 1; /* Menjadi sepenuhnya terlihat */
+  }
+}
+
+/* Animasi dari tidak ada menjadi ada */
+@keyframes fadeIn2 {
+  0% {
+    opacity: 0; /* Mulai dengan tidak terlihat */
+    transform: scale(0.5) translateX(100%) rotate(0deg); /* Mulai dengan ukuran kecil dan rotasi 0 */
+  }
+  100% {
+    opacity: 1; /* Menjadi sepenuhnya terlihat */
+    transform: scale(1) translateX(0) rotate(0deg); /* Kembali ke ukuran asli dengan rotasi 180 derajat */
+  }
+}
+/* Animasi dari tidak ada menjadi ada */
+@keyframes fadeIn3 {
+  0% {
+    opacity: 0; /* Mulai dengan tidak terlihat */
+    transform: scale(0.5) translateX(0) rotate(0deg); /* Kembali ke ukuran asli dengan rotasi 180 derajat */
+  }
+  100% {
+    opacity: 1; /* Menjadi sepenuhnya terlihat */
+    transform: scale(1) translateX(100%) rotate(0deg); /* Mulai dengan ukuran kecil dan rotasi 0 */
+  }
+}
+/* Animasi dari tidak ada menjadi ada */
+@keyframes fadeIn1 {
+  0% {
+    opacity: 0; /* Mulai dengan tidak terlihat */
+    transform: scale(0.5) translateX(-100%) rotate(180deg); /* Mulai dengan ukuran kecil dan rotasi 0 */
+  }
+  100% {
+    opacity: 1; /* Menjadi sepenuhnya terlihat */
+    transform: scale(1) translateX(0) rotate(180deg); /* Kembali ke ukuran asli dengan rotasi 180 derajat */
+  }
+}
+
+/* Gaya untuk gambar yang mengalami animasi fade-in */
+.fade-in-image1 {
+  animation: fadeIn1 2s ease-out forwards; /* Durasi animasi 2 detik */
+}
+.fade-in-image2 {
+  animation: fadeIn2 2s ease-out forwards; /* Durasi animasi 2 detik */
+}
+.fade-in-image3 {
+  animation: fadeIn3 2s ease-out forwards; /* Durasi animasi 2 detik */
+}
+
+/* Gaya untuk gambar akar */
+.root-image {
+  animation: growRoots 3s ease-in-out forwards; /* Durasi animasi */
+}
+
+.bounce {
+  animation: bounce 1s ease-out; /* Durasi animasi 1 detik */
+}
+
+.healthprotocol1 {
+  animation: ping 1s ease-out, ping1 1s ease-out 1s;
+}
+.healthprotocol2 {
+  animation: ping 2s ease-out, ping1 2s ease-out 2s;
+}
+.healthprotocol3 {
+  animation: ping 3s ease-out, ping1 3s ease-out 3s;
+}
+.healthprotocol4 {
+  animation: ping 4s ease-out, ping1 4s ease-out 4s;
+}
+
+.notification {
+  animation: ping 1s ease-out;
+}
+
+.ping {
+  animation: ping 2s ease-out, ping1 2s ease-out 2s; /* Durasi animasi ping 2 detik, ping1 dimulai setelah 2 detik */
+}
+.ping1 {
+  animation: ping1 4s ease-out; /* Durasi animasi ping 2 detik, ping1 dimulai setelah 2 detik */
+}
+
+.ping2 {
+  animation: ping2 2s ease-out; /* Durasi animasi ping 2 detik, ping1 dimulai setelah 2 detik */
+}
+.ping3 {
+  animation: ping 2s ease-out, floatRight2 2s ease-out 1s; /* Durasi animasi ping 2 detik, ping1 dimulai setelah 2 detik */
+}
+.ping4 {
+  animation: ping 2s ease-out, floatLeft3 2s ease-out 2s; /* Durasi animasi ping 2 detik, ping1 dimulai setelah 2 detik */
+}
+.ping5 {
+  animation: ping 2s ease-out, ping4 2s ease-out 2s; /* Durasi animasi ping 2 detik, ping1 dimulai setelah 2 detik */
+}
+
+.animate-ping3 {
+  animation: ping3 2s ease-out;
+}
+
+.element {
+  animation: slideUpSection 1s ease-out; /* Durasi animasi 1 detik */
+  animation-fill-mode: forwards; /* Pastikan elemen tetap pada posisi akhir setelah animasi selesai */
+}
+
+@keyframes slideUpSection2 {
+  0% {
+    transform: translateY(0vh); /* Mulai dari bawah viewport */
+    /* opacity: 1; Elemen terlihat pada awal animasi */
+  }
+  100% {
+    transform: translateY(-100vh); /* Pindah ke posisi semula */
+    /* opacity: 0; Menjadi tidak terlihat pada akhir animasi */
+  }
+}
+
+@keyframes grow2 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes muncul {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.animate-muncul {
+  animation: grow2 10s ease-in forwards, muncul 5s ease-in forwards;
+}
+
+.element2 {
+  animation: slideUpSection2 2s ease-in; /* Durasi animasi 1 detik */
+  animation-fill-mode: forwards; /* Pastikan elemen tetap pada posisi akhir setelah animasi selesai */
+}
+
+@keyframes slideDown {
+  0% {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInScale {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* App.css */
+
+.animate-fadeInScale {
+  animation: fadeInScale 1s ease-out forwards;
+}
+
+.animate-slideDown {
+  animation: slideDown 4s ease-out forwards;
+}
+.animate-slideUp {
+  animation: slideUp 4s ease-out forwards;
+}
+.animate-slideUpText {
+  animation: slideUp 1s ease-out forwards;
+}
+
+/* .animate-slideUpSection {
+  animation: slideUp 3s ease-out forwards;
+} */
+
+.animate-growUp {
+  animation: floatUp 4s ease-in-out; /* Durasi animasi 10 detik dengan easing yang mulus */
+}
+
+/* Kelas animasi untuk elemen yang pertama kali mengaplikasikan floatUp */
+.animate-floatUp {
+  animation: floatUp 2s ease-in-out; /* Durasi animasi 10 detik dengan easing yang mulus */
+}
+
+/* Animasi blow (tertiup angin dengan goyangan)
+@keyframes blow {
+  0% {
+    transform: translateX(0) rotate(0deg);
+  }
+  25% {
+    transform: translateX(-5px) rotate(-2deg);
+  }
+  50% {
+    transform: translateX(5px) rotate(2deg);
+  }
+  75% {
+    transform: translateX(-5px) rotate(-2deg);
+  }
+  100% {
+    transform: translateX(0) rotate(0deg);
+  }
+} */
+
+.animate-spring {
+  animation: spring 3s cubic-bezier(0.5, 1.5, 0.5, 1) forwards;
+}
+
+.animate-gentle-shake {
+  animation: gentleShake 2s ease-in-out infinite;
+}
+
+.animate-rotate {
+  animation: rotate 5s linear infinite;
+}
+
+.animate-sway {
+  animation: sway 4s ease-in-out infinite;
+}
+
+/* .animate-float-up {
+  animation: floatUp 4s ease-in-out;
+} */
+
+.animate-grow {
+  animation: grow 2s ease-out forwards;
+}
+
+/* Kelas animasi untuk gambar yang menggabungkan semua gerakan */
+
+/* Menggunakan animasi yang lebih lambat dan halus */
+.animate-blow {
+  animation: blow 6s ease-in-out infinite; /* Durasi animasi lebih lama dan lebih halus */
+}
+.animate-blow1 {
+  animation: blow 4s ease-in-out infinite; /* Durasi animasi lebih lama dan lebih halus */
+}
+.animate-blow2 {
+  animation: blow 2s ease-in-out infinite; /* Durasi animasi lebih lama dan lebih halus */
+}
+
+.animate-lift {
+  animation: lift 4s ease-in-out infinite;
+}
+
+.animate-spin {
+  animation: spin 6s linear infinite;
+}
+
+.animate-float-up-blow {
+  animation: floatUp 10s ease-in-out, blow 4s ease-in-out infinite;
+}
+
+.animate-spring-blow {
+  animation: spring 10s cubic-bezier(0.5, 1.5, 0.5, 1) forwards, blow 6s ease-in-out infinite;
+}
+
+/* .custom-clip img {
+  clip-path: polygon(0% 0%, 75% 0%, 100% 25%, 100% 100%, 25% 100%, 0% 75%);
+} */
+
+.custom-clip {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.custom-clip img {
+  border-radius: 15px; /* Contoh gaya tambahan */
+}
+
+@keyframes slideLeft {
+  0% {
+    transform: translateX(100vh); /* Mulai di bawah viewport */
+    /* opacity: 0; Tidak terlihat pada awal animasi */
+  }
+  100% {
+    transform: translateX(0); /* Pindah ke posisi semula */
+    /* opacity: 1; Menjadi sepenuhnya terlihat */
+  }
+}
+@keyframes slideRight {
+  0% {
+    transform: translateX(-100vh); /* Mulai di bawah viewport */
+    /* opacity: 0; Tidak terlihat pada awal animasi */
+  }
+  100% {
+    transform: translateX(0); /* Pindah ke posisi semula */
+    /* opacity: 1; Menjadi sepenuhnya terlihat */
+  }
+}
+
+.animate-slideLeft {
+  animation: slideLeft 1s ease-in-out;
+}
+.animate-slideRight {
+  animation: slideRight 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) rotate(0deg); /* Mulai dari posisi normal dan tidak terputar */
+  }
+  25% {
+    transform: translateY(-10px) rotate(-5deg); /* Melayang sedikit ke atas dengan sedikit rotasi */
+  }
+  50% {
+    transform: translateY(0) rotate(5deg); /* Kembali ke posisi normal dengan rotasi sedikit */
+  }
+  75% {
+    transform: translateY(-5px) rotate(-3deg); /* Melayang sedikit lagi ke atas */
+  }
+  100% {
+    transform: translateY(0) rotate(0deg); /* Kembali ke posisi normal dengan rotasi ke posisi semula */
+  }
+}
+@keyframes float1 {
+  0% {
+    transform: translateY(0) rotate(0deg) scaleX(-1); /* Mulai dari posisi normal dan tidak terputar */
+  }
+  25% {
+    transform: translateY(-10px) rotate(-5deg) scaleX(-1); /* Melayang sedikit ke atas dengan sedikit rotasi */
+  }
+  50% {
+    transform: translateY(0) rotate(5deg) scaleX(-1); /* Kembali ke posisi normal dengan rotasi sedikit */
+  }
+  75% {
+    transform: translateY(-5px) rotate(-3deg) scaleX(-1); /* Melayang sedikit lagi ke atas */
+  }
+  100% {
+    transform: translateY(0) rotate(0deg) scaleX(-1); /* Kembali ke posisi normal dengan rotasi ke posisi semula */
+  }
+}
+
+.bounce {
+  animation: ping 2s ease-out, fadeIn 5s ease-in-out 2s, float 8s ease-in-out 7s infinite; /* Durasi lebih panjang dan sangat halus */
+  animation-delay: 1s; /* Delay sedikit agar fadeIn lebih terasa */
+}
+.bounce1 {
+  animation: ping 2s ease-out, floatUp 2s ease-out 2s, float 10s ease-in-out 4s infinite; /* Durasi lebih panjang dan sangat halus */
+  /* animation-delay: 1s; Delay sedikit agar fadeIn lebih terasa */
+}
+.bounce2 {
+  animation: ping 2s ease-out, floatUp8 2s ease-out 2s, float1 10s ease-in-out 4s infinite; /* Durasi lebih panjang dan sangat halus */
+  /* animation-delay: 1s; Delay sedikit agar fadeIn lebih terasa */
+}
