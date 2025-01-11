@@ -34,7 +34,7 @@ const MainComponent = () => {
 
   return (
     <div className=" flex flex-col items-center justify-center overflow-y-hidden min-w-full overflow-x-hidden ">
-      <div ref={sectionRef} className="m-24">
+      <div ref={sectionRef} className="m-24 w-full flex justify-center items-center">
         <Rsvp bingkai1={bingkai1} bingkai2={bingkai5} bingkai3={bingkai15copy} bingkai4={bingkai15} bingkai5={bingkai71} bingkai6={bingkai7} isVisible={isVisible} />
       </div>
       <div className="w-full mb-24">

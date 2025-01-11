@@ -16,7 +16,7 @@ module.exports = withMT({
       },
       screens: {
         // Menambahkan breakpoint khusus jika perlu
-        // sm: "400px",
+        sm: "400px",
         md: "768px",
         lg: "1024px",
         xl: "1280px",

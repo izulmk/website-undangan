@@ -92,7 +92,7 @@ export default function Rsvp({ bingkai1, bingkai2, bingkai3, bingkai4, bingkai5,
     <div className="relative">
       <img src={bingkai1} alt="" className={`h-[27.5rem] w-[21.5rem] ${isVisible ? "opacity-100 animate-grow delay-[300ms]" : "opacity-0"}`} />
       <div className="">
-        <img src={bingkai2} alt="" className={`absolute -top-4 -right-4 z-10 h-[15rem] w-[15rem] ${isVisible ? "opacity-100 fade-in-image2" : "opacity-0"}`} />
+        <img src={bingkai2} alt="" className={` absolute -top-4 -right-4 z-10 h-[15rem] w-[15rem] ${isVisible ? "opacity-100 fade-in-image2" : "opacity-0"}`} />
         <img src={bingkai4} alt="" className={`absolute top-36 -right-14 h-[10rem] w-[10rem] ${isVisible ? "opacity-100 animate-sequence2" : "opacity-0"}`} />
         <img src={bingkai5} alt="" className={`absolute -top-12 right-20 h-[8rem] w-[8rem] ${isVisible ? "opacity-100 animate-floatRightBlow" : "opacity-0"}`} />
       </div>
@@ -102,21 +102,21 @@ export default function Rsvp({ bingkai1, bingkai2, bingkai3, bingkai4, bingkai5,
         <img src={bingkai6} alt="" className={`absolute -bottom-12 left-20 h-[8rem] w-[8rem] ${isVisible ? "opacity-100 animate-floatLeftBlow" : "opacity-0"}`} />
       </div>
       <div className={`absolute mt-4 z-50 inset-x-0 inset-y-12 ${isVisible ? "opacity-100 animate-fadeInScale delay-[300ms]" : "opacity-0"}`}>
-        <div className="px-4 text-center">
-          <p className="text-sm text-secondaryColor">Wedding Invitation</p>
+        <div className="px-4 text-center ">
+          <p className="text-sm text-secondaryColor ">Wedding Invitation</p>
         </div>
-        <div className="text-center mt-2">
-          <WeddingsName text1="Rachael" text2={"Dave"} text3={"&"} isVisible={isVisible} />
+        <div className="text-center mt-2 z-50">
+          <WeddingsName text1="Rachael" text2={"Dave"} text3={"&"} isVisible={isVisible} className="z-50" />
           <p className="text-sm text-[#517470] mt-2">#PromDateToLifeMate</p>
           <p className="text-lg text-primaryColor mt-2">Saturday, 01 February 2025</p>
         </div>
-        <div className="flex justify-center mt-4">
+        <div className="flex justify-center mt-4 z-50">
           {/* Link ke bagian RSVP dengan smooth scroll */}
           <Link to="section-rsvp" smooth={true} duration={1000}>
             <Button text={"RSVP"} />
           </Link>
         </div>
-        <div className="absolute text-center top-60 left-1/2 transform -translate-x-1/2 translate-y-16">
+        <div className="absolute text-center z-50 top-60 left-1/2 transform -translate-x-1/2 translate-y-16">
           <Signal />
         </div>
       </div>
